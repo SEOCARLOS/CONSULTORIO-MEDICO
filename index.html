@@ -54,6 +54,15 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
 
+        .service h3 {
+            cursor: pointer;
+        }
+
+        .service ul {
+            display: none;
+            padding-left: 20px;
+        }
+
         footer {
             background-color: #007BFF;
             color: white;
@@ -68,6 +77,16 @@
             margin: 0;
         }
     </style>
+    <script>
+        function toggleDetails(serviceId) {
+            const details = document.getElementById(serviceId);
+            if (details.style.display === "none" || details.style.display === "") {
+                details.style.display = "block";
+            } else {
+                details.style.display = "none";
+            }
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -86,28 +105,48 @@
             <h2>Servicios</h2>
 
             <div class="service">
-                <h3>1. Ozonoterapia</h3>
-                <p>Tratamientos con ozono para mejorar la salud y calidad de vida.</p>
+                <h3 onclick="toggleDetails('ozonoterapia')">1. Ozonoterapia</h3>
+                <ul id="ozonoterapia">
+                    <li>Tratamiento para dolor crónico</li>
+                    <li>Rehabilitación muscular</li>
+                    <li>Fortalecimiento del sistema inmunológico</li>
+                </ul>
             </div>
 
             <div class="service">
-                <h3>2. Medicina Estética y Antienvejecimiento</h3>
-                <p>Servicios especializados para cuidar tu apariencia y bienestar.</p>
+                <h3 onclick="toggleDetails('medicina-estetica')">2. Medicina Estética y Antienvejecimiento</h3>
+                <ul id="medicina-estetica">
+                    <li>Aplicación de ácido hialurónico</li>
+                    <li>Botox para rejuvenecimiento facial</li>
+                    <li>Peeling químico</li>
+                </ul>
             </div>
 
             <div class="service">
-                <h3>3. Masajes y Tratamientos Corporales Modeladores y Reductores</h3>
-                <p>Terapias personalizadas para moldear y reducir tu figura.</p>
+                <h3 onclick="toggleDetails('tratamientos-corporales')">3. Masajes y Tratamientos Corporales Modeladores y Reductores</h3>
+                <ul id="tratamientos-corporales">
+                    <li>Masajes reductores</li>
+                    <li>Tratamientos con ultrasonido</li>
+                    <li>Envolturas corporales</li>
+                </ul>
             </div>
 
             <div class="service">
-                <h3>4. Evaluaciones Personalizadas</h3>
-                <p>Consulta inicial para determinar el tratamiento ideal según tus necesidades.</p>
+                <h3 onclick="toggleDetails('evaluaciones')">4. Evaluaciones Personalizadas</h3>
+                <ul id="evaluaciones">
+                    <li>Análisis físico y de salud</li>
+                    <li>Planes de tratamiento individualizados</li>
+                    <li>Seguimiento personalizado</li>
+                </ul>
             </div>
 
             <div class="service">
-                <h3>5. Cursos y Capacitaciones</h3>
-                <p>Formación profesional en diversas áreas de salud y estética.</p>
+                <h3 onclick="toggleDetails('cursos')">5. Cursos y Capacitaciones</h3>
+                <ul id="cursos">
+                    <li>Formación en ozonoterapia</li>
+                    <li>Técnicas avanzadas en medicina estética</li>
+                    <li>Capacitación en masajes terapéuticos</li>
+                </ul>
             </div>
         </section>
 
